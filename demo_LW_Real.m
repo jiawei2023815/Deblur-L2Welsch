@@ -46,9 +46,9 @@ opts.c = 0.1; % reweighted coefficient
 
 % saturated
 lambda_grad = 4e-3; lambda_surface = 4e-3;
-opts.gamma = 4e-3; opts.delta = 4e-4;
-opts.kernel_size = 41; opts.xk_iter = 3; opts.gamma_correct = 1.2;
-blur = imread('./saturated1.png'); y = im2double(blur); yg = im2double(rgb2gray(blur));
+opts.gamma = 4e-3; opts.delta = 4e-3;
+opts.kernel_size = 41; opts.xk_iter = 7; opts.gamma_correct = 1.0;
+blur = imread('../Data_Text/img_CVPR2024/ker_six/CVPR24_blur.png'); y = im2double(blur); yg = im2double(rgb2gray(blur));
 
 % convert the strcut opts to GPU
 lambda_grad = gpuArray(single(lambda_grad));
@@ -86,6 +86,6 @@ k = gather(k);
 
 % save the results
 saving_path = './Real_world/';
-imwrite(Latent_cho, [saving_path, 'L2-Welsch_saturated1_deblur.png']);
-imwrite(interim_latent, [saving_path, 'L2-Welsch_saturated1_interim.png']);
-imwrite(k, [saving_path, 'L2-Welsch_saturated1_kernel.png']);
+imwrite(Latent_cho, [saving_path, 'L2-Welsch_CVPR2024_deblur.png']);
+imwrite(interim_latent, [saving_path, 'L2-Welsch_CVPR2024_interim.png']);
+imwrite(k, [saving_path, 'L2-Welsch_CVPR2024_kernel.png']);
