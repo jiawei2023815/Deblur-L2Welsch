@@ -139,7 +139,7 @@ for k = 1 : Maxit
     I_x = ForwardX( I );
     I_y = ForwardY( I );
     
-    Den = real(beta * sqrt(beta2 - phix .^ 2 - phiy .^ 2));
+    Den = real(beta * sqrt(complex(beta2 - phix .^ 2 - phiy .^ 2)));
     Den(Den < 0) = 0;
     phix = phix + r1 * (I_x .* Den - phix);
     phiy = phiy + r1 * (I_y .* Den - phiy);

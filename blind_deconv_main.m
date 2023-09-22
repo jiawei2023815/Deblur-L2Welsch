@@ -103,6 +103,6 @@ end
 %% the reweighted function of kernel estimation
 function Omega = omega(x, a)
 
-Omega = exp(-0.5 * (x / a) .^ 2) .^ 2;
+Omega = exp(-0.5 * (x / a) .^ 2);
 
 end
